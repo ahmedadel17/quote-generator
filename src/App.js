@@ -1,5 +1,7 @@
 import './App.css';
 import React, {useState} from 'react';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import {FacebookShareButton, TwitterIcon, TwitterShareButton, WhatsappShareButton} from "react-share";
 
 const App = () => {
   const url = "https://api.quotable.io/random";
@@ -22,7 +24,7 @@ const App = () => {
     navigator.clipboard.writeText(quote.author + " once said: " + quote.content)
     alert('copied')
   }
-
+ 
   return (
     <>
       <h1>Quote Generator React App</h1>
@@ -33,6 +35,15 @@ const App = () => {
           <button onClick={copy} className="btn">Copy</button>
           <button onClick={generateQuote}>Generate Another Quote</button>
         </div>
+      <TwitterShareButton url='https://www.facebook.com/elbastawesy17/'  title={`"${quote.content}" - ${quote.author}`}>
+      <TwitterIcon size={40}/>
+      </TwitterShareButton>
+      <FacebookShareButton url='https://www.facebook.com/elbastawesy17/'  title={`"${quote.content}" - ${quote.author}`}>
+      <FacebookIcon size={40} sx={{color:'white'}}/>
+      </FacebookShareButton>
+      <WhatsappShareButton url='https://www.Whatsapp.com/elbastawesy17/'  title={`"${quote.content}" - ${quote.author}`}>
+      {'WHATSAPP'}
+      </WhatsappShareButton>
       </div>
     </>
   )
