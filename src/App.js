@@ -1,8 +1,9 @@
 import './App.css';
 import React, {useState} from 'react';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import {FacebookShareButton, TwitterIcon, TwitterShareButton, WhatsappShareButton} from "react-share";
-
+import {FacebookShareButton, TwitterShareButton, WhatsappShareButton} from "react-share";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { Twitter } from '@mui/icons-material';
 const App = () => {
   const url = "https://api.quotable.io/random";
   let quoteData = {
@@ -36,13 +37,13 @@ const App = () => {
           <button onClick={generateQuote}>Generate Another Quote</button>
         </div>
       <TwitterShareButton url='https://www.facebook.com/elbastawesy17/'  title={`"${quote.content}" - ${quote.author}`}>
-      <TwitterIcon size={40}/>
+      <Twitter size={40}sx={{color:'white'}}/>
       </TwitterShareButton>
       <FacebookShareButton url='https://www.facebook.com/elbastawesy17/'  title={`"${quote.content}" - ${quote.author}`}>
       <FacebookIcon size={40} sx={{color:'white'}}/>
       </FacebookShareButton>
       <WhatsappShareButton url='https://www.Whatsapp.com/elbastawesy17/'  title={`"${quote.content}" - ${quote.author}`}>
-      {'WHATSAPP'}
+      <WhatsAppIcon size={40}sx={{color:'white'}}/>
       </WhatsappShareButton>
       </div>
     </>
